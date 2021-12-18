@@ -1,0 +1,44 @@
+<% for(var i = 0; i < beasts.length; i++) { %>
+<tr>
+    <td><b><%= beasts[i].name  %></b></td>
+    <td><i class="mobile">HP :&nbsp </i><%= beasts[i].hp  %></td>
+    <td><i class="mobile">AC :&nbsp </i><%= beasts[i].ac  %></td>
+    <td>
+        <i class="mobile">Damage :&nbsp </i>
+        <% for(var j = 0; j < beasts[i].actions.length; j++) { %>
+            <% if(beasts[i].actions[j].dice_amount) { %>
+                <%= beasts[i].actions[j].dice_amount %>D<%= beasts[i].actions[j].dice_type %> <%= beasts[i].actions[j].dam_type %>
+                <% if(beasts[i].actions[j + 1]) { %>
+                    ,
+                <% } %>
+            <% } %>
+        <% } %>
+    </td>
+    <td>
+        <i class="mobile">Abilities :&nbsp </i>
+        <% for(var j = 0; j < beasts[i].movement.length; j++) { %>
+            <%= beasts[i].movement[j].name %>
+            <% if(beasts[i].movement[j + 1]) { %>
+                ,
+            <% } %>
+        <% } %>
+    </td>
+    <td>
+        <% for(var j = 0; j < beasts[i].abilities.length; j++) { %>
+            <%= beasts[i].abilities[j].name %>
+            <% if(beasts[i].abilities[j + 1]) { %>
+                ,
+            <% } %>
+        <% } %>
+    </td>
+
+    <td>
+        <div class="view">
+            <a href="/view-beast?id=<%= beasts[i]._id %>" class="view-btn border-shadow white-back">
+                <span class="text-gradient med"><i class="fas fa-eye"></i></span>
+            </a>
+        </div>
+    </td>
+</tr>
+
+<% } %>

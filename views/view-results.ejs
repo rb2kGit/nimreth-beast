@@ -1,0 +1,50 @@
+<!-- Include the header -->
+    <%- include('include/_header') %>
+<!-- /Include the header -->
+
+<!-- main site-->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between" >
+            <a href="/" class="border-shadow white-back">
+                <span class="text-gradient">Reset</span>
+            </a>
+        </div>
+        <div class="container">
+            <form action="/filter-results" method="GET" id="filter">
+
+                <!-- Include the filter form-->
+                <%- include('include/_filter') %>
+                <!-- /Include the filter form-->
+
+            </form>
+        </div>
+        <!-- form handling-->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>HP</th>
+                            <th>AC</th>
+                            <th>Damage</th>
+                            <th>Movement</th>
+                            <th>Abilities</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Include the table -->
+                            <%- include('include/_table') %>
+                        <!-- /Include the tablee -->
+                    </tbody>
+                </table>
+            </form>
+        <!-- /form handling-->
+    </div>
+</main>
+<!-- /main site-->
+
+<!-- Include the footer -->
+    <%- include('include/_footer') %>
+<!-- /Include the footer -->

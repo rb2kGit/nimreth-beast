@@ -1,0 +1,166 @@
+<div class="container">
+    <div class="stat-group dflex">
+        <div class="text-left">
+            <%= beast.size %> <%= beast.type %> | <%= beast.alignment %> | CR <%= beast.challenge %>
+        </div>
+    </div>
+    <div class="stat-group">
+        <h3 class="bot-border text-left">Combat and Actions</h3>
+        <div class=" d-flex justify-around text-left">
+            <div class="margin">
+                HP <%= beast.hp %> <br> AC <%= beast.ac %>
+            </div>
+            <div>
+                <% for( var i = 0; i < beast.actions.length; i++) { %>
+                    <div class="margin">
+                        <span class="bold">
+                            <%= beast.actions[i].name %> :&nbsp 
+                        </span><%= beast.actions[i].text %>
+                    </div> 
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="stat-group text-left">
+        <h3 class="bot-border">Movement</h3>
+        <div class="d-flex justify-around">
+            <% for( var i = 0; i < beast.movement.length; i++) { %>
+                <div>
+                    <%= beast.movement[i].name %> : <%= beast.movement[i].number %> feet
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="stat-group text-left">
+        <h3 class="bot-border">Abilities</h3>
+        <div class="d-flex">
+            <% for( var i = 0; i < beast.abilities.length; i++) { %>
+                <div>
+                    <br>
+                    <i><%= beast.abilities[i].name %> :&nbsp</i> <%= beast.abilities[i].text %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="stat-group text-left">
+        <h3 class="bot-border">Skills and Senses</h3>
+        <div class="d-flex justify-around">
+            <% for( var i = 0; i < beast.ability_modifiers.length; i++) { %>
+                <div>
+                    <%= beast.ability_modifiers[i].name %>: +<%= beast.ability_modifiers[i].number %>
+                </div>
+            <% } %>
+                <% for( var i = 0; i < beast.senses.length; i++) { %>
+                    <div>
+                        <%= beast.senses[i].name %>: <%= beast.senses[i].number %>
+                    </div>
+                <% } %>
+        </div>
+    </div>
+    <div class="stat-group text-left">
+        <h3 class="bot-border">Scores</h3>
+        <table class="beast-table text-center full-width">
+            <tr class="desktop">
+                <td>STR</td>
+                <td>DEX</td>
+                <td>CON</td>
+                <td>INT</td>
+                <td>WIS</td>
+                <td>CHA</td>
+            </tr>
+            <tr>
+                <td><i class="mobile">STR :&nbsp</i><%= beast.scores.str %> [ <%= beast.scores.str_mod %> ]</td>
+                <td><i class="mobile">DEX :&nbsp</i><%= beast.scores.dex %> [ <%= beast.scores.dex_mod %> ]</td>
+                <td><i class="mobile">CON :&nbsp</i><%= beast.scores.con %> [ <%= beast.scores.con_mod %> ]</td>
+                <td><i class="mobile">INT :&nbsp</i><%= beast.scores.int %> [ <%= beast.scores.int_mod %> ]</td>
+                <td><i class="mobile">WIS :&nbsp</i><%= beast.scores.wis %> [ <%= beast.scores.wis_mod %> ]</td>
+                <td><i class="mobile">CHA :&nbsp</i><%= beast.scores.cha %> [ <%= beast.scores.cha_mod %> ]</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!--<div class="table">
+    <table class="beast-table text-center">
+        <tr>
+            <td><%= beast.size %> <%= beast.type %></td>
+            <td>|</td>
+            <td><%= beast.alignment %></td>
+            <td>|</td>
+            <td>CR <%= beast.challenge %></td>
+        </tr>
+    </table>
+    <table class="beast-table text-left">
+        <caption>Combat and Actions</caption>
+        <tbody>
+            <tr>
+                <td>HP <br> <%= beast.hp %> <br><br> AC <br> <%= beast.ac %></td>
+                <td>
+                    <table class="beast-table-inner">
+                        <% for( var i = 0; i < beast.actions.length; i++) { %>
+                            <tr> 
+                                <td><%= beast.actions[i].name %>:</td>
+                                <td><%= beast.actions[i].text %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="beast-table text-left">
+        <caption>Movement</caption>
+        <tr>            
+            <% for( var i = 0; i < beast.movement.length; i++) { %>
+                <td>
+                    <%= beast.movement[i].name %>: <%= beast.movement[i].number %> feet 
+                </td>
+            <% } %>
+        </tr>
+    </table>
+    <table class="beast-table text-center">
+        <caption>Abilities</caption>
+        <tr>            
+            <% for( var i = 0; i < beast.abilities.length; i++) { %>
+                <td>
+                    <%= beast.abilities[i].name %>: <%= beast.abilities[i].text %>
+                </td>
+            <% } %>
+        </tr>
+    </table>
+    <table class="beast-table text-center full-width">
+        <caption>Skills and Senses</caption>
+        <tr>            
+            <% for( var i = 0; i < beast.ability_modifiers.length; i++) { %>
+                <td>
+                    <%= beast.ability_modifiers[i].name %>: <%= beast.ability_modifiers[i].number %>
+                </td>
+                <% } %>
+                <% for( var i = 0; i < beast.senses.length; i++) { %>
+                    <td>
+                        <%= beast.senses[i].name %>: <%= beast.senses[i].number %>
+                    </td>
+                <% } %>
+        </tr>
+    </table>
+    <table class="beast-table text-center full-width">
+        <caption>Scores</caption>
+        <tr>
+            <td>STR</td>
+            <td>DEX</td>
+            <td>CON</td>
+            <td>INT</td>
+            <td>WIS</td>
+            <td>CHA</td>
+        </tr>
+        <tr>
+            <td><%= beast.scores.str %> [ <%= beast.scores.str_mod %> ]</td>
+            <td><%= beast.scores.dex %> [ <%= beast.scores.dex_mod %> ]</td>
+            <td><%= beast.scores.con %> [ <%= beast.scores.con_mod %> ]</td>
+            <td><%= beast.scores.int %> [ <%= beast.scores.int_mod %> ]</td>
+            <td><%= beast.scores.wis %> [ <%= beast.scores.wis_mod %> ]</td>
+            <td><%= beast.scores.cha %> [ <%= beast.scores.cha_mod %> ]</td>
+        </tr>
+    </table>
+</div>-->

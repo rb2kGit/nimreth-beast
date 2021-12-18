@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Script&family=Poppins:wght@300;600&display=swap');
+
+:root{
+    --dark: #2b2d42;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+select{
+    width: 10em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    background: white;
+}
+
+input[type=number]{
+    width: 10em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    color:rgb(94, 46, 94);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.sub-btn{
+    font-family: 'Nova Script', cursive;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 10em;
+    background-color: linear-gradient( to right, purple, blue);
+}
+
+.stat-group{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 1em;
+    word-spacing: .1em;
+    line-height: 1.75em;
+}
+
+.nova{
+    font-family: 'Nova Script', cursive;
+    font-size: 1.2em;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: auto .5em;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Nova Script', cursive;
+}
+
+select{
+    margin-right: .5em;
+    background: white;
+}
+
+label{
+    margin: .25em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.border{
+    border: 2px solid black;
+}
+
+.bot-border{
+    border-bottom: solid 1px Purple;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: .5em;
+}
+
+.bot-space{
+    margin-bottom: 1em;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.nav-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.text-dark{
+    color: var(--dark);
+}
+
+.text-light{
+    color: white;
+}
+
+#header nav{
+    background-color: rgb(94, 46, 94);
+    padding: 1em 0;
+    width: 100%;
+}
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top-border{
+    border-top: 2px solid purple;
+    border-radius: 7px;
+}
+
+.grain{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2GwBqtiKUd8ynK4GuzegGWM7UHK9OZLx2sQ&usqp=CAU);
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.border-shadow{
+    padding: .5em;
+    border: 1px solid  #edf2f4;
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.center{
+    margin: auto;
+}
+
+.text-gradient{
+    padding: .25em;
+    background: linear-gradient( to right, purple, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.table{
+    border-spacing: 0px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-top: 1.5em;
+}
+
+.form-group{
+    padding: none;
+}
+
+.desktop{
+    visibility: visible;
+}
+
+.stat-title{
+    margin-bottom: 0.75em;
+    font-size: 2em;
+}
+
+.btn{
+    width: 10em;
+    margin: 1em;
+    padding: .5em;
+    cursor: pointer;
+    background: linear-gradient( to right, purple, blue);
+    color: white;
+}
+
+.btn-back{
+    font-size: .9em;
+    cursor: pointer;
+}
+
+.beast-table{
+    border-spacing: 0px;
+    vertical-align: top;
+    margin: .75em;
+}
+
+.beast-table caption{
+    font-weight: bold;
+    padding: 0.75em;
+    text-align: left;
+    border-bottom: solid 1px grey;
+    width: 100%;
+}
+
+.beast-table tr td{
+    border: none;
+}
+
+.beast-table-inner tr td{
+    border: none;
+    text-align: left;
+}
+
+.white-back{
+    background-color: white;
+}
+
+.view{
+    width: 50px;
+    display:flex;
+    justify-content: space-around;
+    margin: auto
+}
+
+.margin{
+    margin: .5em;
+}
+
+.table td, table th{
+    padding: 0.75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: solid 1px grey;
+}
+
+.table td > a.view-btn{
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: .2em;
+}
+
+.table .thead-dark th{
+    color: white;
+    background-color: rgb(158, 156, 156);
+    border-color: rgb(158, 156, 156);
+}
+
+.table tr:hover{
+    background-color: rgb(179, 179, 240);
+}
+
+.table tr:hover td > a{
+    box-shadow: none;
+}
+
+.image{
+    max-width: 100%;
+    border: solid 2px purple;
+    border-radius: 5px;
+}
+
+.img-container{
+    width: 100%;
+}
+
+#site-main{
+    background-image: url(https://www.designbolts.com/wp-content/uploads/2012/12/Stacked-Circles-White-Seamless-Pattern.jpg);
+}
+
+#site-main .container .box-nav{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 1024px){
+    .box-nav{
+        justify-content: space-between;
+    }
+    
+    .container.d-flex{
+        display: block;
+        justify-content: space-around;
+    }
+
+    .container .text-left{
+        text-align: center;
+    }
+
+    .form-group{
+        margin: .5em;
+    }
+    
+    table, thead, tbody, th, td, tr{
+        display: block;
+    }
+
+    .table td, table th{
+        border-top: none;
+    }
+
+    tr{
+        margin-bottom: 1em;
+        border-top: solid 2px purple;
+        border-bottom: solid 2px purple;
+        border-radius: 7px;
+        background-color: white;
+    }
+
+    thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .beast-table tr{
+        background: none;
+    }
+
+    .beast-table tr{
+        border: none;
+    }
+
+    .mobile{
+        display:contents;
+        color: gray;
+    }
+
+    .desktop{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        visibility: hidden;
+    }
+
+    .box-nav .view{
+        text-align: left;
+    }
+
+    .view{
+        display: block;
+        margin: .5em auto;
+    }
+}
