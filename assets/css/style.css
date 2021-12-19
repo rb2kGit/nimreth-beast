@@ -224,13 +224,6 @@ label{
     background-color: white;
 }
 
-.view{
-    width: 75px;
-    display:flex;
-    justify-content: space-around;
-    margin: auto
-}
-
 .margin{
     margin: .5em;
 }
@@ -243,8 +236,7 @@ label{
 }
 
 .table td > a.view-btn{
-    padding: .3em 1em;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: .2em;
     color:rgb(94, 46, 94);
 }
@@ -291,7 +283,7 @@ label{
     font-size: 1.2em;
     text-decoration: none;
     color: purple;
-    width: 100px;
+    margin: auto;
 }
 
 @media only screen and (max-width: 1024px){
@@ -319,6 +311,7 @@ label{
     .table td, table th{
         border-top: none;
         padding: .5em;
+        background-color: #FAF9F6;
     }
 
     tr{
@@ -326,7 +319,7 @@ label{
         border-top: solid 2px purple;
         border-bottom: solid 2px purple;
         border-radius: 7px;
-        background-color: white;
+        background-color: none;
     }
 
     thead tr{
@@ -359,8 +352,7 @@ label{
         text-align: left;
     }
 
-    .view{
-        display: block;
-        margin: .5em auto;
+    .med{
+        width: 65px;
     }
 }
