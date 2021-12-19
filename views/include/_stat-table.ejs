@@ -13,9 +13,7 @@
             <div>
                 <% for( var i = 0; i < beast.actions.length; i++) { %>
                     <div class="margin">
-                        <span class="bold">
-                            <%= beast.actions[i].name %> :&nbsp 
-                        </span><%= beast.actions[i].text %>
+                        <span class="bold"><%= beast.actions[i].name %> :&nbsp </span><%= beast.actions[i].text %>
                     </div> 
                 <% } %>
             </div>
@@ -37,7 +35,7 @@
             <% for( var i = 0; i < beast.abilities.length; i++) { %>
                 <div>
                     <br>
-                    <i><%= beast.abilities[i].name %> :&nbsp</i> <%= beast.abilities[i].text %>
+                    <span class="bold"><i><%= beast.abilities[i].name %> :&nbsp</i></span><%= beast.abilities[i].text %>
                 </div>
             <% } %>
         </div>
