@@ -15,7 +15,7 @@
         <% } %>
     </td>
     <td>
-        <i class="mobile">Abilities :&nbsp </i>
+        <i class="mobile">Movement :&nbsp </i>
         <% for(var j = 0; j < beasts[i].movement.length; j++) { %>
             <%= beasts[i].movement[j].name %>
             <% if(beasts[i].movement[j + 1]) { %>
@@ -24,6 +24,7 @@
         <% } %>
     </td>
     <td>
+        <i class="mobile">Abilities :&nbsp </i>
         <% for(var j = 0; j < beasts[i].abilities.length; j++) { %>
             <%= beasts[i].abilities[j].name %>
             <% if(beasts[i].abilities[j + 1]) { %>
