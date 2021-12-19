@@ -225,7 +225,7 @@ label{
 }
 
 .view{
-    width: 50px;
+    width: 75px;
     display:flex;
     justify-content: space-around;
     margin: auto
@@ -246,6 +246,7 @@ label{
     padding: .3em 1em;
     font-size: 1.1em;
     margin: .2em;
+    color:rgb(94, 46, 94);
 }
 
 .table .thead-dark th{
@@ -286,6 +287,13 @@ label{
     display: none;
 }
 
+.med{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: purple;
+    width: 100px;
+}
+
 @media only screen and (max-width: 1024px){
     .box-nav{
         justify-content: space-between;
@@ -301,7 +309,7 @@ label{
     }
 
     .form-group{
-        margin: .5em;
+        margin: .25em;
     }
     
     table, thead, tbody, th, td, tr{
@@ -310,6 +318,7 @@ label{
 
     .table td, table th{
         border-top: none;
+        padding: .5em;
     }
 
     tr{
