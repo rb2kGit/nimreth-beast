@@ -23,6 +23,8 @@ route.get('/edit-menu', services.edit_menu)
 
 route.get('/edit-beast', services.edit_beast)
 
+route.get('/flight', services.flying)
+
 /*route.get('/add-beast', (req, res) => {
     res.render('add-beast')
 })*/

@@ -271,6 +271,7 @@ label{
 
 #site-main{
     background-image: url(https://www.designbolts.com/wp-content/uploads/2012/12/Stacked-Circles-White-Seamless-Pattern.jpg);
+    min-height: 1080px;
 }
 
 #site-main .container .box-nav{
@@ -296,6 +297,46 @@ label{
     flex-wrap: wrap;
 }
 /* <Edit Form Styling/> */
+
+/* Flight Distane Styling*/
+.flex-right{
+    flex-direction: row-reverse;
+}
+/*.dragon{
+    background-image: url(https://t3.ftcdn.net/jpg/02/78/05/20/360_F_278052015_D3OM4r1H1k2wxA9I7E1oHwolMnh50fr3.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+}*/
+.lower{
+    /* Center vertically */
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    margin: auto;
+}
+.green{
+    color: green;
+    font-weight: bold;
+    font-size: large;
+}
+.blue{
+    color: blue;
+    font-weight: bold;
+    font-size: large;
+}
+.horiz{
+    height: 25px;
+    width: 100%;
+}
+.vert{
+    height: 500px;
+}
+.flight-container{
+    display: block;
+    text-align: right;
+}
+/* Flight Distane Styling*/
 
 
 @media only screen and (max-width: 1024px){

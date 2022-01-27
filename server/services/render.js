@@ -54,4 +54,14 @@ exports.edit_beast =  (req, res) => {
     })
 }
 
+exports.flying = (req, res) => {
+    res.render('flight')
+    /*axios.get('http://localhost:3000/flight'/*'https://nimreths-beasts.herokuapp.com/flight').then(function(response){
+        res.render('flight')
+    })
+    .catch(err => {
+        res.send("Big Error Boy")
+    })*/
+}
+
 //http://localhost:3000/api/beasts
