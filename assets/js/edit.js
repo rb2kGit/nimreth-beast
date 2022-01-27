@@ -13,7 +13,7 @@ $("#ed_beast").submit( function(event){
     console.log(data)
 
     var request = {
-        "url" : `http://localhost:3000/api/beasts/${data.id}`,//`https://nimreths-beasts.herokuapp.com/api/beasts/${data.id}`,
+        "url" : /*`http://localhost:3000/api/beasts/${data.id}` ,*/`https://nimreths-beasts.herokuapp.com/api/beasts/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -33,7 +33,7 @@ if(window.location.pathname == '/edit-menu'){
 
         //Create a request variable.
         var request = {
-            "url" : `http://localhost:3000/api/beasts/${id}`,//`https://nimreths-beasts.herokuapp.com/api/beasts/${data.id}`,
+            "url" : /*`http://localhost:3000/api/beasts/${id}`,*/`https://nimreths-beasts.herokuapp.com/api/beasts/${id}`,
             "method" : "DELETE"
         }
 
