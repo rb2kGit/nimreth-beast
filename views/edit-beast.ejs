@@ -1,0 +1,439 @@
+<!-- Include the header -->
+<%- include('include/_header') %>
+<!-- /Include the header -->
+
+<!-- main site-->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between" >
+            <button onclick="history.back()" class="border-shadow white-back nova btn-back">
+                <span class="text-gradient"><< Back</span>
+            </button>
+        </div>
+
+        <form action="/api/beasts" method="POST" id="ed_beast">
+            <div class="edit_beast">
+                <!--Name form-->
+                <div class="form-group e-group justify-around">
+                    <div class="form-pod">
+                        <label for="name">Name</label>
+                        <input type="hidden" name="id" value="<%= beast._id %>">
+                        <input type="text" name="name" id="name" value="<%= beast.name %>">
+                    </div>
+                    <div class="form-pod">
+                        <label for="size">size</label>
+                        <input type="text" name="size" id="size" value="<%= beast.size %>">
+                    </div>
+                    <div class="form-pod">
+                        <label for="type">Type</label>
+                        <input type="text" name="type" id="type" value="<%= beast.type %>">
+                    </div>
+                    <div class="form-pod">
+                        <label for="alignment">Alignment</label>
+                        <input type="text" name="alignment" id="alignment" value="<%= beast.alignment %>">
+                    </div>        
+                </div>
+                <div class="form-group e-group justify-around">
+                    <div class="form-pod">
+                        <label for="hp">HP</label>
+                        <input type="number" name="hp" id="hp" value="<%= beast.hp %>">
+                    </div>
+                    <div class="form-pod">
+                        <label for="ac">AC</label>
+                        <input type="number" name="ac" id="ac" value="<%= beast.ac %>">
+                    </div>
+                    <div class="form-pod">
+                        <label for="cr">CR</label>
+                        <input type="text" name="cr" id="cr" value="<%= beast.challenge %>">
+                    </div>
+                </div>
+                <!--Scores form-->
+                <div class="form-group e-group justify-around">
+                    <div class="form-pod">
+                        <div>
+                            <label for="str">STR</label>
+                            <input type="number" name="str" id="str" value="<%= beast.scores.str %>">
+                        </div>
+                        <div>
+                            <label for="str_modifier">Modifier</label>
+                            <input type="number" name="str_modifier" id="str_modifier" value="<%= beast.scores.str_mod %>">
+                        </div>
+                    </div>
+        
+                    <div class="form-pod">
+                    <div>
+                        <label for="dex">DEX</label>
+                        <input type="number" name="dex" id="dex" value="<%= beast.scores.dex %>">    
+                    </div>
+                    <div>
+                        <label for="dex_modifier">Modifier</label>
+                        <input type="number" name="dex_modifier" id="dex_modifier" value="<%= beast.scores.dex_mod %>">
+                        </div>
+                    </div>
+        
+                    <div class="form-pod">
+                        <div>
+                            <label for="con">CON</label>
+                            <input type="number" name="con" id="con" value="<%= beast.scores.con %>">
+                        </div>
+                        <div>
+                            <label for="con_modifier">Modifier</label>
+                            <input type="number" name="con_modifier" id="con_modifier" value="<%= beast.scores.con_mod %>">    
+                        </div>
+                    </div>
+        
+                    <div class="form-pod">
+                        <div>
+                            <label for="int">INT</label>
+                            <input type="number" name="int" id="int" value="<%= beast.scores.int %>">
+                        </div>
+                        <div>
+                            <label for="int_modifier">Modifier</label>
+                            <input type="number" name="int_modifier" id="int_modifier" value="<%= beast.scores.int_mod %>">  
+                        </div>
+                    </div>
+        
+                    <div class="form-pod">
+                        <div>
+                            <label for="wis">WIS</label>
+                            <input type="number" name="wis" id="wis" value="<%= beast.scores.wis %>">
+                        </div>
+                        <div>
+                            <label for="wis_modifier">Modifier</label>
+                            <input type="number" name="wis_modifier" id="wis_modifier" value="<%= beast.scores.wis_mod %>">
+                        </div>
+                    </div>
+        
+                    <div class="form-pod">
+                        <div>
+                            <label for="cha">CHA</label>
+                            <input type="number" name="cha" id="cha" value="<%= beast.scores.cha %>">
+                        </div>
+                        <div>
+                            <label for="cha_modifier">Modifier</label>
+                            <input type="number" name="cha_modifier" id="cha_modifier" value="<%= beast.scores.cha_mod %>"> 
+                        </div>
+                    </div>
+                </div>
+                <!--Ability form-->
+                <div class="form-group">
+                    <label for="ability_name1">Name of Ability</label>
+                    <input type="text" name="ability_name1" value="">
+                    <label for="ability_text1">Ability Text</label>
+                    <input type="text" name="ability_text1" value="" placeholder="Add or copy text here.">
+                    <label for="ability_keywords1">Keywords In Ability</label>
+                    <input type="text" name="ability_keywords1" value="" placeholder="">
+                    <br>
+                    <label for="ability_name2">Name of Ability</label>
+                    <input type="text" name="ability_name2" value="" placeholder="Keen Sense">
+                    <label for="ability_text2">Ability Text</label>
+                    <input type="text" name="ability_text2" value="" placeholder="Add or copy text here.">
+                    <label for="ability_keywords2">Keywords In Ability</label>
+                    <input type="text" name="ability_keywords2" value="" placeholder="">
+                    <br>
+                    <label for="ability_name3">Name of Ability</label>
+                    <input type="text" name="ability_name3" value="" placeholder="Keen Sense">
+                    <label for="ability_text3">Ability Text</label>
+                    <input type="text" name="ability_text3" value="" placeholder="Add or copy text here.">
+                    <label for="ability_keywords3">Keywords In Ability</label>
+                    <input type="text" name="ability_keywords3" value="" placeholder="">
+                    <br>
+                    <label for="ability_name4">Name of Ability</label>
+                    <input type="text" name="ability_name4" value="" placeholder="Keen Sense">
+                    <label for="ability_text4">Ability Text</label>
+                    <input type="text" name="ability_text4" value="" placeholder="Add or copy text here.">
+                    <label for="ability_keywords4">Keywords In Ability</label>
+                    <input type="text" name="ability_keywords4" value="" placeholder="">
+                    <br>
+                </div>
+                <!--Ability Modifiers form-->
+                <div class="form-group">
+                    <label for="ability_mod_name1">Ability Mod Name</label>
+                    <input type="text" name="ability_mod_name1" value="" placeholder="Proficiency Bonus">
+                    <label for="ability_mod_bonus1">Ability Mod Bonus</label>
+                    <input type="number" name="ability_mod_bonus1" value="" placeholder="+10">
+                    <br>
+                    <label for="ability_mod_name2">Ability Mod Name</label>
+                    <input type="text" name="ability_mod_name2" value="" placeholder="Proficiency Bonus">
+                    <label for="ability_mod_bonus2">Ability Mod Bonus</label>
+                    <input type="number" name="ability_mod_bonus2" value="" placeholder="+10">
+                    <br>
+                    <label for="ability_mod_name3">Ability Mod Name</label>
+                    <input type="text" name="ability_mod_name3" value="" placeholder="Proficiency Bonus">
+                    <label for="ability_mod_bonus3">Ability Mod Bonus</label>
+                    <input type="number" name="ability_mod_bonus3" value="" placeholder="+10">
+                    <br>
+                    <label for="ability_mod_name4">Ability Mod Name</label>
+                    <input type="text" name="ability_mod_name4" value="" placeholder="Proficiency Bonus">
+                    <label for="ability_mod_bonus4">Ability Mod Bonus</label>
+                    <input type="number" name="ability_mod_bonus4" value="" placeholder="+10">
+                    <br>
+                </div>
+                <!--Movement form-->
+                <div class="form-group">
+        
+                    <select name="movement_name1" id="movement_name1">
+                        <option value="">Movement</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Climb">Climb</option>
+                        <option value="Burrow">Burrow</option>
+                        <option value="Swim">Swim</option>
+                        <option value="Fly">Fly</option>
+                    </select>
+                    <label for="movement_number1">Distance In Feet</label>
+                    <input type="number" name="movement_number1" value="" placeholder="30">
+                    <br>
+                    <select name="movement_name2" id="movement_name1">
+                        <option value="">Movement</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Climb">Climb</option>
+                        <option value="Burrow">Burrow</option>
+                        <option value="Swim">Swim</option>
+                        <option value="Fly">Fly</option>
+                    </select>
+                    <label for="movement_number2">Distance In Feet</label>
+                    <input type="number" name="movement_number2" value="" placeholder="30">
+                    <br>
+                    <select name="movement_name3" id="movement_name1">
+                        <option value="">Movement</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Climb">Climb</option>
+                        <option value="Burrow">Burrow</option>
+                        <option value="Swim">Swim</option>
+                        <option value="Fly">Fly</option>
+                    </select>
+                    <label for="movement_number3">Distance In Feet</label>
+                    <input type="number" name="movement_number3" value="" placeholder="30">
+                    <br>
+                    <select name="movement_name4" id="movement_name1">
+                        <option value="">Movement</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Climb">Climb</option>
+                        <option value="Burrow">Burrow</option>
+                        <option value="Swim">Swim</option>
+                        <option value="Fly">Fly</option>
+                    </select>
+                    <label for="movement_number4">Distance In Feet</label>
+                    <input type="number" name="movement_number4" value="" placeholder="30">
+                    <br>
+                    <select name="movement_name5" id="movement_name1">
+                        <option value="">Movement</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Climb">Climb</option>
+                        <option value="Burrow">Burrow</option>
+                        <option value="Swim">Swim</option>
+                        <option value="Fly">Fly</option>
+                    </select>
+                    <label for="movement_number5">Distance In Feet</label>
+                    <input type="number" name="movement_number5" value="" placeholder="30">
+                </div>
+                <!--Senses form-->
+                <div class="form-group">
+                    <label for="sense_name1">Sense Name</label>
+                    <input type="text" name="sense_name1" value="" placeholder="Darkvision">
+                    <label for="sense_number1">Sense Number</label>
+                    <input type="number" name="sense_number1" value="" placeholder="30">
+                    <br>
+                    <label for="sense_name2">Sense Name</label>
+                    <input type="text" name="sense_name2" value="" placeholder="Darkvision">
+                    <label for="sense_number2">Sense Number</label>
+                    <input type="number" name="sense_number2" value="" placeholder="30">
+                    <br>
+                    <label for="sense_name3">Sense Name</label>
+                    <input type="text" name="sense_name3" value="" placeholder="Darkvision">
+                    <label for="sense_number3">Sense Number</label>
+                    <input type="number" name="sense_number3" value="" placeholder="30">
+                    <br>
+                    <label for="sense_name4">Sense Name</label>
+                    <input type="text" name="sense_name4" value="" placeholder="Darkvision">
+                    <label for="sense_number4">Sense Number</label>
+                    <input type="number" name="sense_number4" value="" placeholder="30">
+                    <br>
+                </div>
+                <!--Actions form-->
+                <div class="form-group">
+                    <label for="attack_name1">Name of Attack</label>
+                    <input type="text" name="attack_name1" value="" placeholder="Bite">
+                    <label for="attack_text1">Attack Text</label>
+                    <input type="text" name="attack_text1" value="" placeholder="Add or copy text here.">
+                    <label for="attack_mod1">Attack Modifier to Hit</label>
+                    <input type="number" name="attack_mod1" value="" placeholder="+5">
+                    <label for="attack_reach1">Attack Reach In Feet</label>
+                    <input type="number" name="attack_reach1" value="" placeholder="5">
+                    <label for="attack_target1">Number of Targets</label>
+                    <input type="number" name="attack_target1" value="" placeholder="1">
+                    <label for="dice_amount1">Number of Dice</label>
+                    <input type="number" name="dice_amount1" value="" placeholder="2">
+                    D
+                    <label for="dice_type1">Type of Dice</label>
+                    <input type="number" name="dice_type1" value="" placeholder="10">
+                    <label for="dice_modifier1">Dice Mod</label>
+                    <input type="number" name="dice_modifier1" value="" placeholder="+5">
+                    <label for="damage_average1">Damage Average</label>
+                    <input type="number" name="damage_average1" value="" placeholder="6">
+                    <select name="damage_type1" id="damage_type1">
+                        <option value="">Damage Types</option>
+                        <option value="bludgeoning">Bludgeoning</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="slashing">Slashing</option>
+                        <option value="acid">Acid</option>
+                        <option value="cold">Cold</option>
+                        <option value="fire">Fire</option>
+                        <option value="force">Force</option>
+                        <option value="lightning">Lightning</option>
+                        <option value="necrotic">Necrotic</option>
+                        <option value="poison">Poison</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="radiant">Radiant</option>
+                        <option value="thunder">Thunder</option>
+                    </select>
+                    <label for="attack_type1">Type of Attack</label>
+                    <input type="text" name="attack_type1" value="" placeholder="melee weapon attack">
+                    <label for="attack_keywords1">Keywords</label>
+                    <input type="text" name="attack_keywords1" value="" placeholder="keywords">
+                    <br>
+                    -----------------------------
+                    <br>
+                    <label for="attack_name2">Name of Attack</label>
+                    <input type="text" name="attack_name2" value="" placeholder="Bite">
+                    <label for="attack_text2">Attack Text</label>
+                    <input type="text" name="attack_text2" value="" placeholder="Add or copy text here.">
+                    <label for="attack_mod2">Attack Modifier to Hit</label>
+                    <input type="number" name="attack_mod2" value="" placeholder="+5">
+                    <label for="attack_reach2">Attack Reach In Feet</label>
+                    <input type="number" name="attack_reach2" value="" placeholder="5">
+                    <label for="attack_target2">Number of Targets</label>
+                    <input type="number" name="attack_target2" value="" placeholder="1">
+                    <label for="dice_amount2">Number of Dice</label>
+                    <input type="number" name="dice_amount2" value="" placeholder="2">
+                    D
+                    <label for="dice_type2">Type of Dice</label>
+                    <input type="number" name="dice_type2" value="" placeholder="10">
+                    <label for="dice_modifier2">Dice Mod</label>
+                    <input type="number" name="dice_modifier2" value="" placeholder="+5">
+                    <label for="damage_average2">Damage Average</label>
+                    <input type="number" name="damage_average2" value="" placeholder="6">
+                    <select name="damage_type2" id="damage_type2">
+                        <option value="">Damage Types</option>
+                        <option value="bludgeoning">Bludgeoning</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="slashing">Slashing</option>
+                        <option value="acid">Acid</option>
+                        <option value="cold">Cold</option>
+                        <option value="fire">Fire</option>
+                        <option value="force">Force</option>
+                        <option value="lightning">Lightning</option>
+                        <option value="necrotic">Necrotic</option>
+                        <option value="poison">Poison</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="radiant">Radiant</option>
+                        <option value="thunder">Thunder</option>
+                    </select>
+                    <label for="attack_type2">Type of Attack</label>
+                    <input type="text" name="attack_type2" value="" placeholder="melee weapon attack">
+                    <label for="attack_keywords2">Keywords</label>
+                    <input type="text" name="attack_keywords2" value="" placeholder="keywords">
+                    <br>
+                    -----------------------------
+                    <br>
+                    <label for="attack_name3">Name of Attack</label>
+                    <input type="text" name="attack_name3" value="" placeholder="Bite">
+                    <label for="attack_text3">Attack Text</label>
+                    <input type="text" name="attack_text3" value="" placeholder="Add or copy text here.">
+                    <label for="attack_mod3">Attack Modifier to Hit</label>
+                    <input type="number" name="attack_mod3" value="" placeholder="+5">
+                    <label for="attack_reach3">Attack Reach In Feet</label>
+                    <input type="number" name="attack_reach3" value="" placeholder="5">
+                    <label for="attack_target3">Number of Targets</label>
+                    <input type="number" name="attack_target3" value="" placeholder="1">
+                    <label for="dice_amount3">Number of Dice</label>
+                    <input type="number" name="dice_amount3" value="" placeholder="2">
+                    D
+                    <label for="dice_type3">Type of Dice</label>
+                    <input type="number" name="dice_type3" value="" placeholder="10">
+                    <label for="dice_modifier3">Dice Mod</label>
+                    <input type="number" name="dice_modifier3" value="" placeholder="+5">
+                    <label for="damage_average3">Damage Average</label>
+                    <input type="number" name="damage_average3" value="" placeholder="6">
+                    <select name="damage_type3" id="damage_type3">
+                        <option value="">Damage Types</option>
+                        <option value="bludgeoning">Bludgeoning</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="slashing">Slashing</option>
+                        <option value="acid">Acid</option>
+                        <option value="cold">Cold</option>
+                        <option value="fire">Fire</option>
+                        <option value="force">Force</option>
+                        <option value="lightning">Lightning</option>
+                        <option value="necrotic">Necrotic</option>
+                        <option value="poison">Poison</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="radiant">Radiant</option>
+                        <option value="thunder">Thunder</option>
+                    </select>
+                    <label for="attack_type3">Type of Attack</label>
+                    <input type="text" name="attack_type3" value="" placeholder="melee weapon attack">
+                    <label for="attack_keywords3">Keywords</label>
+                    <input type="text" name="attack_keywords3" value="" placeholder="keywords">
+                    <br>
+                    -----------------------------
+                    <br>
+                    <label for="attack_name4">Name of Attack</label>
+                    <input type="text" name="attack_name4" value="" placeholder="Bite">
+                    <label for="attack_text4">Attack Text</label>
+                    <input type="text" name="attack_text4" value="" placeholder="Add or copy text here.">
+                    <label for="attack_mod4">Attack Modifier to Hit</label>
+                    <input type="number" name="attack_mod4" value="" placeholder="+5">
+                    <label for="attack_reach4">Attack Reach In Feet</label>
+                    <input type="number" name="attack_reach4" value="" placeholder="5">
+                    <label for="attack_target4">Number of Targets</label>
+                    <input type="number" name="attack_target4" value="" placeholder="1">
+                    <label for="dice_amount4">Number of Dice</label>
+                    <input type="number" name="dice_amount4" value="" placeholder="2">
+                    D
+                    <label for="dice_type4">Type of Dice</label>
+                    <input type="number" name="dice_type4" value="" placeholder="10">
+                    <label for="dice_modifier4">Dice Mod</label>
+                    <input type="number" name="dice_modifier4" value="" placeholder="+5">
+                    <label for="damage_average4">Damage Average</label>
+                    <input type="number" name="damage_average4" value="" placeholder="6">
+                    <select name="damage_type4" id="damage_type4">
+                        <option value="">Damage Types</option>
+                        <option value="bludgeoning">Bludgeoning</option>
+                        <option value="piercing">Piercing</option>
+                        <option value="slashing">Slashing</option>
+                        <option value="acid">Acid</option>
+                        <option value="cold">Cold</option>
+                        <option value="fire">Fire</option>
+                        <option value="force">Force</option>
+                        <option value="lightning">Lightning</option>
+                        <option value="necrotic">Necrotic</option>
+                        <option value="poison">Poison</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="radiant">Radiant</option>
+                        <option value="thunder">Thunder</option>
+                    </select>
+                    <label for="attack_type4">Type of Attack</label>
+                    <input type="text" name="attack_type4" value="" placeholder="melee weapon attack">
+                    <label for="attack_keywords4">Keywords</label>
+                    <input type="text" name="attack_keywords4" value="" placeholder="keywords">
+                    <br>
+                    -----------------------------
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="imgURL">Image</label>
+                    <input type="text" name="imgURL" id="size" value="" placeholder="url">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="update">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<!-- /main site-->
+
+<!-- Include the footer -->
+    <%- include('include/_footer') %>
+<!-- /Include the footer -->

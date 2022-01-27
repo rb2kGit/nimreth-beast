@@ -1,74 +1,64 @@
 const mongoose = require('mongoose')
 
 var schema = new mongoose.Schema({
-    name : {
-        type : String,
-        required: true,
-        unique: true
-    },
-    challenge : {
-        type : String,
-        required: true
-    },
-    size : {
-        type : String,
-        required : true
-    },
-    type : {
-        type: String,
-        required : true
-    },
-    alignment : {
-        type : String,
-        required : true
-    },
-    hp : {
-        type : Number,
-        required: true
-    },
-    ac : {
-        type : Number,
-        required : true
-    },
-    abilities : [Object] ,
-    ability_modifiers : [Object],
-    movement : [Object],
+    name : String,
+    challenge : String,
+    size : String,
+    type : String,
+    alignment : String,
+    hp : Number,
+    ac : Number,
+    abilities : [{
+        name : String,
+        text : String,
+        keyword : [],
+        _id : false
+    }], 
+    ability_modifiers : [{
+        name : String,
+        number : Number,
+        _id : false
+                        }],
+    movement : [{
+        name : String,
+        number : Number,
+        _id : false
+    }],
     scores : {
-        type : Object,
-        required : true,
-        properties : {
-            str : { type : Number, required : true},
-            str_mod : { type : Number, required : true},
-            dex : { type : Number, required : true},
-            dex_mod : { type : Number, required : true},
-            con : { type : Number, required : true},
-            con_mod : { type : Number, required : true},
-            int : { type : Number, required : true},
-            int_mod : { type : Number, required : true},
-            wis : { type : Number, required : true},
-            wis_mod : { type : Number, required : true},
-            cha : { type : Number, required : true},
-            cha_mod : { type : Number, required : true}
-        }
+        str : Number,
+        str_mod : Number,
+        dex : Number,
+        dex_mod : Number,
+        con : Number,
+        con_mod : Number,
+        int : Number,
+        int_mod : Number,
+        wis : Number,
+        wis_mod : Number,
+        cha : Number,
+        cha_mod : Number,
     },
-    senses : [Object],
-    actions : {
-        type : Object,
-        required : false,
-        properties : {
-            name : { type : String, required : true},
-            type : { type : String, required : true},
-            mod : { type : Number, required : true },
-            reach : { type : Number, required : true},
-            target : { type : Number, required : true},
-            dice1 : { type : Number, required : true},
-            dice2 : { type : Number, required : true},
-            dice_mod : { type : Number, required : false},
-            dam_type : { type : String, required : true},
-            text : { type : String, required : true},
-            keywords : [String]
-        }
-    }
+    senses : [{
+        name : String,
+        number : Number,
+        _id : false
+    }],
+    actions : [{
+        name : String,
+        atype : String,
+        text : String,
+        mod : Number,
+        reach : Number,
+        target : Number, 
+        dice_amount : Number,
+        dice_type : Number,
+        dice_mod : Number,
+        dam_avg : Number,
+        dam_type : String,
+        keywords : [String],
+        _id : false
+    }],
+    image : String
 })
 
 const BeastsDB = mongoose.model('beasts', schema)

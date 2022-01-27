@@ -1,0 +1,53 @@
+<!-- Include the header -->
+<%- include('include/_header') %>
+<!-- /Include the header -->
+
+<!-- main site-->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between" >
+            <button onclick="history.back()" class="border-shadow white-back nova btn-back">
+                <span class="text-gradient"><< Back</span>
+            </button>
+        </div>
+        <!--<div class="box-nav d-flex justify-between bot-space" >
+            <a href="/" class="border-shadow white-back">
+                <span class="text-gradient">Refresh</span>
+            </a>
+            <a href="/" class="border-shadow white-back">
+                <span class="text-gradient">Add</span>
+            </a>
+            <a href="/" class="border-shadow white-back">
+                <span class="text-gradient">Initiative</span>
+            </a>
+        </div>-->
+        
+        <!-- form handling-->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>HP</th>
+                            <th>AC</th>
+                            <th>Damage</th>
+                            <th>Movement</th>
+                            <th>Abilities</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Include the table -->
+                            <%- include('include/_etable') %>
+                        <!-- /Include the tablee -->
+                    </tbody>
+                </table>
+            </form>
+        <!-- /form handling-->
+    </div>
+</main>
+<!-- /main site-->
+
+<!-- Include the footer -->
+    <%- include('include/_footer') %>
+<!-- /Include the footer -->
