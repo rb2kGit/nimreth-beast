@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color :#696969;
+}
+
 select{
     width: 10em;
     font-family: 'Poppins', sans-serif;
@@ -225,7 +229,7 @@ label{
 }
 
 .dark-back{
-    background-color: rgb(94, 46, 94);
+    background-color: #696969;
 }
 
 .margin{
@@ -290,6 +294,36 @@ label{
     color: purple;
     margin: auto;
 }
+
+/* Footer Styling */
+.footer-margin{
+    margin: .6em;
+}
+.footer-head{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.footer-link{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: .75em;
+    color: white;
+}
+.footer-link:hover{
+    color: rgb(179, 179, 240);
+}
+
+#foot-container{
+    border-top: 1px solid black;
+}
+
+.border-bottom{
+    border-bottom: 1px solid white;
+}
+/* /Footer Styling */
 
 /* <Edit Form Styling> */
 .e-group{
