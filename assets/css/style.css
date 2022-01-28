@@ -325,18 +325,28 @@ label{
     font-weight: bold;
     font-size: large;
 }
-.horiz{
-    height: 25px;
-    width: 100%;
-}
-.vert{
-    height: 500px;
-}
 .flight-container{
     display: block;
     text-align: right;
 }
-/* Flight Distane Styling*/
+.range-slider{
+    width: 300px;
+}
+.range-slider-vert{
+    width: 300px;
+    position: absolute;
+    transform: rotate(270deg) translate(-50%, -185px);
+}
+.five-hundred{
+    height: 375px;
+}
+#height-slider{
+    width: 350px;
+}
+#buffer{
+    margin-right: 25px;
+}
+/* Flight Distance Styling*/
 
 
 @media only screen and (max-width: 1024px){
